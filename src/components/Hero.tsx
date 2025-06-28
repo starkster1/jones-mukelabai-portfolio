@@ -40,10 +40,10 @@ const Hero = () => {
                 </div>
                 
                 {/* Photo container */}
-                <div className="absolute inset-1 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-110 transition-all duration-500">
+                <div className="absolute inset-1 rounded-full overflow-hidden group-hover:scale-110 transition-all duration-500">
                   {/* Your header photo */}
                   <img 
-                    src="/photos/prof.jpg" 
+                    src="photos/prof.jpg" 
                     alt="Jones Mukelabai - Header Photo"
                     className="w-full h-full object-cover object-center"
                   />
@@ -130,10 +130,10 @@ const Hero = () => {
               </div>
               
               {/* Photo container */}
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-105 transition-all duration-500">
+              <div className="absolute inset-2 rounded-full overflow-hidden group-hover:scale-105 transition-all duration-500">
                 {/* Your main professional photo */}
                 <img 
-                  src="/photos/prof.jpg" 
+                  src="photos/prof.jpg" 
                   alt="Jones Mukelabai - Professional Photo"
                   className="w-full h-full object-cover object-center"
                 />
