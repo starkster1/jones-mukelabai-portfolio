@@ -85,12 +85,12 @@ const About = () => {
             </div>
             <div className="w-px h-12 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-600">4</div>
+              <div className="text-3xl font-bold text-teal-600">6</div>
               <div className="text-gray-600">Tech Stacks</div>
             </div>
             <div className="w-px h-12 bg-gray-300"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600">2</div>
+              <div className="text-3xl font-bold text-orange-600">3</div>
               <div className="text-gray-600">Major Projects</div>
             </div>
             <div className="w-px h-12 bg-gray-300"></div>

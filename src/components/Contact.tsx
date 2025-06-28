@@ -21,7 +21,7 @@ const Contact = () => {
 
     try {
       // Replace YOUR_FORM_ID with your actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mpwrknzy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-300">jones.mukelabai@example.com</p>
+                  <p className="text-gray-300">mukelabaijones@gmail.com</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-gray-300">+260 XXX XXX XXX</p>
+                  <p className="text-gray-300">+260 974 769 278</p>
                 </div>
               </div>
 

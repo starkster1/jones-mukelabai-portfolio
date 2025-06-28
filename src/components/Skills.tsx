@@ -14,7 +14,7 @@ const Skills = () => {
       title: 'Software Development',
       icon: Code,
       color: 'teal',
-      skills: ['Python', 'Java', 'C++', 'JavaScript', 'Git', 'API Design', 'Testing', 'Agile'],
+      skills: ['Python', 'JavaScript', 'Git', 'API Design', 'Testing', 'Agile'],
       description: 'Creating robust software solutions with clean architecture and scalable design patterns.'
     },
     {

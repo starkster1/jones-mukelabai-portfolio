@@ -1,7 +1,13 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Download, Code, Smartphone, Brain, Globe, Camera } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Code, Smartphone, Brain, Globe } from 'lucide-react';
+import { downloadCV } from '../utils/downloadUtils';
 
 const Hero = () => {
+  // Handle CV download using utility function
+  const handleDownloadCV = () => {
+    downloadCV();
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
       {/* Animated background elements */}
@@ -35,23 +41,15 @@ const Hero = () => {
                 
                 {/* Photo container */}
                 <div className="absolute inset-1 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-110 transition-all duration-500">
-                  {/* Placeholder for header photo - Replace with your photo */}
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center relative overflow-hidden">
-                    {/* Placeholder content - Remove this when you add your photo */}
-                    <div className="text-center">
-                      <Camera className="w-6 h-6 lg:w-8 lg:h-8 text-gray-600 mx-auto" />
-                    </div>
-                    
-                    {/* Uncomment and use this img tag with your header photo */}
-                    { <img 
-                      src="/photos/prof.jpg" 
-                      alt="Jones Mukelabai - Header Photo"
-                      className="w-full h-full object-cover object-center"
-                    /> }
-                    
-                    {/* Animated overlay effects */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
+                  {/* Your header photo */}
+                  <img 
+                    src="/photos/prof.jpg" 
+                    alt="Jones Mukelabai - Header Photo"
+                    className="w-full h-full object-cover object-center"
+                  />
+                  
+                  {/* Animated overlay effects */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 
                 {/* Floating mini icon */}
@@ -88,11 +86,22 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
-              <Download className="w-5 h-5" />
+            <button 
+              onClick={handleDownloadCV}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 group"
+            >
+              <Download className="w-5 h-5 group-hover:animate-bounce" />
               Download CV
             </button>
-            <button className="px-8 py-4 border border-gray-600 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => {
+                const projectsSection = document.querySelector('#projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="px-8 py-4 border border-gray-600 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+            >
               View Projects
             </button>
           </div>
@@ -122,25 +131,15 @@ const Hero = () => {
               
               {/* Photo container */}
               <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-105 transition-all duration-500">
-                {/* Placeholder for your main photo - Replace the src with your actual photo */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center relative overflow-hidden">
-                  {/* Placeholder content - Remove this when you add your photo */}
-                  <div className="text-center">
-                    <Camera className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                    <p className="text-gray-600 font-semibold">Main Photo Here</p>
-                    <p className="text-gray-500 text-sm mt-2">Replace with your image</p>
-                  </div>
-                  
-                  {/* Uncomment and use this img tag with your main photo */}
-                  { <img 
-                    src="/photos/prof.jpg" 
-                    alt="Jones Mukelabai - Professional Photo"
-                    className="w-full h-full object-cover object-center"
-                  />}
-                  
-                  {/* Animated overlay effects */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
+                {/* Your main professional photo */}
+                <img 
+                  src="/photos/prof.jpg" 
+                  alt="Jones Mukelabai - Professional Photo"
+                  className="w-full h-full object-cover object-center"
+                />
+                
+                {/* Animated overlay effects */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
               {/* Floating tech icons around the photo */}
