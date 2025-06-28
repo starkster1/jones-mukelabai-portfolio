@@ -14,31 +14,72 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col lg:flex-row items-center justify-between min-h-screen">
         {/* Left content */}
         <div className="lg:w-1/2 space-y-8 animate-fade-in-up">
-          <div className="space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              Jones
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
-                Mukelabai
-              </span>
-            </h1>
-            <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-blue-600/20 rounded-full text-blue-300 backdrop-blur-sm border border-blue-500/30 flex items-center gap-2 hover:bg-blue-600/30 transition-all duration-300 transform hover:scale-105">
-                <Globe className="w-4 h-4" />
-                Web Developer
-              </span>
-              <span className="px-4 py-2 bg-teal-600/20 rounded-full text-teal-300 backdrop-blur-sm border border-teal-500/30 flex items-center gap-2 hover:bg-teal-600/30 transition-all duration-300 transform hover:scale-105">
-                <Code className="w-4 h-4" />
-                Software Developer
-              </span>
-              <span className="px-4 py-2 bg-orange-600/20 rounded-full text-orange-300 backdrop-blur-sm border border-orange-500/30 flex items-center gap-2 hover:bg-orange-600/30 transition-all duration-300 transform hover:scale-105">
-                <Smartphone className="w-4 h-4" />
-                Mobile Developer
-              </span>
-              <span className="px-4 py-2 bg-purple-600/20 rounded-full text-purple-300 backdrop-blur-sm border border-purple-500/30 flex items-center gap-2 hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-105">
-                <Brain className="w-4 h-4" />
-                ML Engineer
-              </span>
+          {/* Name and Header Photo Row */}
+          <div className="flex items-center gap-6">
+            <div className="space-y-4 flex-1">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                Jones
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">
+                  Mukelabai
+                </span>
+              </h1>
             </div>
+            
+            {/* Header Photo Container */}
+            <div className="relative group hidden md:block">
+              <div className="relative w-24 h-24 lg:w-32 lg:h-32">
+                {/* Animated rotating border */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-600 via-teal-600 to-orange-600 p-1 animate-spin-slow">
+                  <div className="w-full h-full rounded-full bg-slate-800"></div>
+                </div>
+                
+                {/* Photo container */}
+                <div className="absolute inset-1 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-110 transition-all duration-500">
+                  {/* Placeholder for header photo - Replace with your photo */}
+                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center relative overflow-hidden">
+                    {/* Placeholder content - Remove this when you add your photo */}
+                    <div className="text-center">
+                      <Camera className="w-6 h-6 lg:w-8 lg:h-8 text-gray-600 mx-auto" />
+                    </div>
+                    
+                    {/* Uncomment and use this img tag with your header photo */}
+                    { <img 
+                      src="/photos/prof.jpg" 
+                      alt="Jones Mukelabai - Header Photo"
+                      className="w-full h-full object-cover object-center"
+                    /> }
+                    
+                    {/* Animated overlay effects */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                </div>
+                
+                {/* Floating mini icon */}
+                <div className="absolute -top-1 -right-1 w-6 h-6 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center animate-pulse shadow-lg">
+                  <Code className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills badges */}
+          <div className="flex flex-wrap gap-3">
+            <span className="px-4 py-2 bg-blue-600/20 rounded-full text-blue-300 backdrop-blur-sm border border-blue-500/30 flex items-center gap-2 hover:bg-blue-600/30 transition-all duration-300 transform hover:scale-105">
+              <Globe className="w-4 h-4" />
+              Web Developer
+            </span>
+            <span className="px-4 py-2 bg-teal-600/20 rounded-full text-teal-300 backdrop-blur-sm border border-teal-500/30 flex items-center gap-2 hover:bg-teal-600/30 transition-all duration-300 transform hover:scale-105">
+              <Code className="w-4 h-4" />
+              Software Developer
+            </span>
+            <span className="px-4 py-2 bg-orange-600/20 rounded-full text-orange-300 backdrop-blur-sm border border-orange-500/30 flex items-center gap-2 hover:bg-orange-600/30 transition-all duration-300 transform hover:scale-105">
+              <Smartphone className="w-4 h-4" />
+              Mobile Developer
+            </span>
+            <span className="px-4 py-2 bg-purple-600/20 rounded-full text-purple-300 backdrop-blur-sm border border-purple-500/30 flex items-center gap-2 hover:bg-purple-600/30 transition-all duration-300 transform hover:scale-105">
+              <Brain className="w-4 h-4" />
+              ML Engineer
+            </span>
           </div>
           
           <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
@@ -69,7 +110,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right content - Professional Photo */}
+        {/* Right content - Main Professional Photo */}
         <div className="lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0">
           <div className="relative group">
             {/* Main photo container with animated border */}
@@ -81,21 +122,21 @@ const Hero = () => {
               
               {/* Photo container */}
               <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-tr from-gray-200 to-gray-400 group-hover:scale-105 transition-all duration-500">
-                {/* Placeholder for your photo - Replace the src with your actual photo */}
+                {/* Placeholder for your main photo - Replace the src with your actual photo */}
                 <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center relative overflow-hidden">
                   {/* Placeholder content - Remove this when you add your photo */}
                   <div className="text-center">
                     <Camera className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                    <p className="text-gray-600 font-semibold">Your Photo Here</p>
+                    <p className="text-gray-600 font-semibold">Main Photo Here</p>
                     <p className="text-gray-500 text-sm mt-2">Replace with your image</p>
                   </div>
                   
-                  {/* Uncomment and use this img tag with your photo */}
-                  {/* <img 
-                    src="/path-to-your-photo.jpg" 
+                  {/* Uncomment and use this img tag with your main photo */}
+                  { <img 
+                    src="/photos/prof.jpg" 
                     alt="Jones Mukelabai - Professional Photo"
                     className="w-full h-full object-cover object-center"
-                  /> */}
+                  />}
                   
                   {/* Animated overlay effects */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
