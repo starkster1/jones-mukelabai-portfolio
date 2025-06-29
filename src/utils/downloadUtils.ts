@@ -47,7 +47,7 @@ export const downloadFile = (filePath: string, options: DownloadOptions = {}) =>
  * Download CV with predefined settings
  */
 export const downloadCV = () => {
-  downloadFile('/cv/jones-mukelabai-cv.pdf', {
+  downloadFile('cv/jones-mukelabai-cv.pdf', {
     filename: 'Jones_Mukelabai_CV.pdf',
     openInNewTab: true
   });

@@ -65,7 +65,7 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -74,7 +74,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: #3b82f6;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -93,4 +93,59 @@ input:focus,
 textarea:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  /* Optimize form inputs for mobile */
+  input, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-white\/5 {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .border-white\/10 {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-spin-slow,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
 }

@@ -14,7 +14,7 @@ const Skills = () => {
       title: 'Software Development',
       icon: Code,
       color: 'teal',
-      skills: ['Python', 'JavaScript', 'Git', 'API Design', 'Testing', 'Agile'],
+      skills: ['Python', 'Java', 'JavaScript', 'Git', 'API Design', 'Testing', 'Agile'],
       description: 'Creating robust software solutions with clean architecture and scalable design patterns.'
     },
     {
@@ -76,48 +76,48 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">Skills</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-0">
             Comprehensive expertise across multiple technology stacks and development disciplines.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
                 key={index}
-                className={`group bg-white border-2 ${getColorClasses(category.color).split(' ')[2]} rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105`}
+                className={`group bg-white border-2 ${getColorClasses(category.color).split(' ')[2]} rounded-2xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105`}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${getColorClasses(category.color).split(' ')[0]} ${getColorClasses(category.color).split(' ')[1]} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${getColorClasses(category.color).split(' ')[0]} ${getColorClasses(category.color).split(' ')[1]} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {category.title}
                 </h3>
                 
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
                   {category.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.skills.slice(0, 4).map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors duration-200"
+                      className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors duration-200"
                     >
                       {skill}
                     </span>
                   ))}
                   {category.skills.length > 4 && (
-                    <span className="px-3 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium">
+                    <span className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium">
                       +{category.skills.length - 4} more
                     </span>
                   )}
@@ -127,8 +127,8 @@ const Skills = () => {
           })}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-shadow duration-300">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="inline-block bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-lg transition-shadow duration-300 text-sm sm:text-base">
             Always learning and exploring new technologies
           </div>
         </div>

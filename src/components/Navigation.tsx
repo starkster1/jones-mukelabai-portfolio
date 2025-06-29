@@ -36,29 +36,30 @@ const Navigation = () => {
         ? 'bg-white/95 backdrop-blur-md shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className={`p-2 rounded-lg transition-colors duration-300 ${
+            <div className={`p-1.5 sm:p-2 rounded-lg transition-colors duration-300 ${
               isScrolled ? 'bg-blue-600 text-white' : 'bg-white/10 text-white'
             }`}>
-              <Code className="w-6 h-6" />
+              <Code className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <span className={`text-xl font-bold transition-colors duration-300 ${
+            <span className={`text-lg sm:text-xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-gray-900' : 'text-white'
             }`}>
-              Jones Mukelabai
+              <span className="hidden sm:inline">Jones Mukelabai</span>
+              <span className="sm:hidden">Jones M.</span>
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`font-medium transition-colors duration-300 hover:scale-105 transform ${
+                className={`font-medium transition-colors duration-300 hover:scale-105 transform text-sm lg:text-base ${
                   isScrolled 
                     ? 'text-gray-700 hover:text-blue-600' 
                     : 'text-gray-300 hover:text-white'
@@ -67,7 +68,9 @@ const Navigation = () => {
                 {item.name}
               </button>
             ))}
-            <button className={`px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+            <button 
+              onClick={() => scrollToSection('#contact')}
+              className={`px-4 lg:px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-sm lg:text-base ${
               isScrolled
                 ? 'bg-blue-600 text-white hover:bg-blue-700'
                 : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/30'
@@ -91,8 +94,8 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-200">
-            <div className="px-6 py-4 space-y-4">
+          <div className="md:hidden absolute top-14 sm:top-16 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-200">
+            <div className="px-4 sm:px-6 py-4 space-y-3">
               {navItems.map((item) => (
                 <button
                   key={item.name}
@@ -102,7 +105,13 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
-              <button className="w-full mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+              <button 
+                onClick={() => {
+                  scrollToSection('#contact');
+                  setIsOpen(false);
+                }}
+                className="w-full mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+              >
                 Hire Me
               </button>
             </div>
