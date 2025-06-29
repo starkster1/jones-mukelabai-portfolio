@@ -23,29 +23,7 @@ const Hero = () => {
           {/* Name and Header Photo Row - Mobile Optimized */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             {/* Header Photo Container - Mobile First */}
-            <div className="relative group order-1 sm:order-2">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32">
-                {/* Animated rotating border */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-600 via-teal-600 to-orange-600 p-1 animate-spin-slow">
-                  <div className="w-full h-full rounded-full bg-slate-800"></div>
-                </div>
-                
-                {/* Photo container */}
-                <div className="absolute inset-1 rounded-full overflow-hidden group-hover:scale-110 transition-all duration-500">
-                  <img 
-                    src="photos/prof.jpg" 
-                    alt="Jones Mukelabai - Header Photo"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                {/* Floating mini icon */}
-                <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-blue-600 rounded-full flex items-center justify-center animate-pulse shadow-lg">
-                  <Code className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-white" />
-                </div>
-              </div>
-            </div>
+           
 
             <div className="space-y-2 sm:space-y-4 flex-1 order-2 sm:order-1">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
